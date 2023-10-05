@@ -1,17 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <script defer src="main.js"></script>
-    <title>Document</title>
+    <title>Hangman spillet</title>
 </head>
-<body>
+<body> 
+    <div class="container">
+
+       <!-- Venstre kolonne -->
+
+        <div class="left-column">
+            <div class="instructions">
+                <h1>Velkommen til Hangman spillet</h1>
+                <h3>Sådan spiller du:</h3>
+                <br>
+                <ol>
+                    <br>
+                    <li>
+                        <p>Det gælder om at gætte det rigtige kodesprog inden for programmering.</p>
+                    </li>
+                    <br>
+                    <li>
+                        <p>Vælg et bogstav fra tastaturet nedenfor og klik på det.</p>
+                    </li>
+                    <br>
+                    <li>
+                        <p>Hvis bogstavet er en del af det hemmelige ord, vil det blive vist på pladsen.</p>
+                    </li>
+                    <br>
+                    <li>
+                        <p>Hvis du gætter forkert 6 gange, taber du spillet.</p>
+                    </li>
+                    <br>
+                    <li>
+                        <p>Prøv at gætte hele ordet, før du løber tør for forsøg!</p>
+                    </li>
+                    <br>
+                    <li>
+                        <p>Den samlede score er baseret på antal rigtige gæt og antal forkerte gæt, dvs. du kan risikere at få minus point samt
+                            dobblet bogstaver tæller kun for <u>1 point.</u></p>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Miderste kolonne -->
+
+        <div class="middle-column">
+
+            <div class="rightandwrong-container">
+                <h3 class="correct-guess">Rigtige gæt: <span id='correctGuesses'>0</span> of <span id='wordLength'></span></h3>
+                <h3 class="wrong-guess">Forkerte gæt: <span id='mistakes'>0</span> of <span id='maxWrong'></span></h3>
+            </div>
+
+            <div class="hangmanContainer"> 
+                <img id='hangmanPic' src="./assets/0.svg" alt="Billede af galgen i start position til hangman spillet">
+            </div>
+
+            <div class="keybaordSection">
+                <p>Gæt et kodeprogram</p>
+                <p id="word-field">Ordet der skal gættes indsættes her</p>
+                <p id="win-message" style="display: none;">Tillykke, du gættede ordet! Du fik <span id="total-score">0</span> points</p>
+                <div id="keyboard"></div>
+                <button class="btn-reset" onClick="reset()">Start nyt spil</button>
+            </div>
+            
+        </div>
+
+        <!-- Højre kolonne -->
+
+        <div class="right-column" id="score-container">
+            <h3>Højeste og senste score</h3>
+            <p class="btn-primary">Seneste score: <span id="latest-score">0</span></p>
+            <p class="btn-secound">Bedste score: <span id="best-score">0</span></p>    
+            <button id="plus-textSize"><img src="assets/letter+.png" alt="Knap til at gøre skriftstørrelsen større"></button>
+            <button id="minus-textSize"><img src="assets/letter.png" alt="Knap til at gøre skriftstørrelsen mindre"></button>
+        </div>
 
 
-    <h1>Hello</h1>
-
-    
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
