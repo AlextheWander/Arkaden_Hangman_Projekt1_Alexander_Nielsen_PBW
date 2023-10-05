@@ -16,6 +16,9 @@ const latestScoreElement = document.getElementById('latest-score');
 
 
 // 3. Funktion til at vælge et tilfældigt ord fra listen.
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/floor
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length
 function randomWord() {
     answer = programming_languages[Math.floor(Math.random() * programming_languages.length)];
     document.getElementById('wordLength').textContent = answer.length;
@@ -23,6 +26,9 @@ function randomWord() {
 }
 
 // 4. Funktion til at generere tastaturknapper.
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
 function generateButtons() {
     // Opret HTML-knapper for hvert bogstav.
     let buttonsHTML = 'abcdefghijklmnopqrstuvwxyzæøå'.split('').map(letter =>
@@ -40,6 +46,11 @@ function generateButtons() {
 }
 
 // 5. Funktion til at håndtere et gæt fra spilleren.
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push
+// https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/add
+
 function handleGuess(chosenLetter) {
     if (wordStatus !== answer) {
         if (mistakes === maxWrong) {
@@ -79,6 +90,8 @@ function updateHangmanPicture() {
 }
 
 // 7. Funktion til at tjekke, om spillet er vundet.
+// https://www.w3schools.com/jsref/prop_style_display.asp
+// https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent
 function checkIfGameWon() {
     if (wordStatus === answer) {
         hideKeyboard(); // Skjul tastaturet.
@@ -97,6 +110,8 @@ function checkIfGameWon() {
 }
 
 // 8. Funktion til at tjekke, om spillet er tabt.
+// https://www.freecodecamp.org/news/loose-vs-strict-equality-in-javascript/
+
 function checkIfGameLost() {
     if (mistakes === maxWrong) {
         document.getElementById('word-field').textContent = 'Du har desværre tabt, det rigtige svar var: ' + answer;
@@ -111,6 +126,10 @@ function checkIfGameLost() {
 }
 
 // 9. Funktion til at opdatere det viste ord med gættede bogstaver.
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join
 function guessedWord() {
     wordStatus = answer.split('').map(letter => (guessed.indexOf(letter) >= 0 ? letter : " _ ")).join('');
     document.getElementById('word-field').textContent = wordStatus;
@@ -142,7 +161,6 @@ document.getElementById('minus-textSize').addEventListener('click', function () 
 
 // 12. Funktion til at ændre tekststørrelsen i spillet.
 function changeFontSize(size) {
-    const body = document.body;
     const buttons = document.querySelectorAll('.btn, .btn-reset, .btn-primary, .btn-secound');
     const textElements = document.querySelectorAll('p, h2, h3, .word-field, #win-message, button');
 
@@ -161,6 +179,9 @@ latestScoreElement.textContent = latestScore;
 bestScoreElement.textContent = bestScore;
 
 // 13. Funktion til at opdatere bedste score, hvis den aktuelle score er højere.
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt
+// https://developer.mozilla.org/en-US/docs/Web/API/Storage/getItem
+//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/toString
 function updateBestScore(score) {
     const currentBestScore = parseInt(localStorage.getItem('hangmanBestScore')) || 0;
     if (score > currentBestScore) {
@@ -170,6 +191,7 @@ function updateBestScore(score) {
 }
 
 // 14. Funktion til at gemme seneste score i lokal lagring.
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/toString
 function saveLatestScore(score) {
     localStorage.setItem('hangmanLatestScore', score.toString());
 }
@@ -206,8 +228,8 @@ function reset() {
     showKeyboard();
 
 
-    // Aktiver alle knapper igen.
-
+// Aktiver alle knapper igen.
+// https://developer.mozilla.org/en-US/docs/Web/API/Element/removeAttribute
     document.querySelectorAll('.btn').forEach(button => {
         button.removeAttribute('disabled');
     });
