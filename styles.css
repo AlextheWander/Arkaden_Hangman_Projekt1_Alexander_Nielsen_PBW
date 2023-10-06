@@ -33,9 +33,9 @@ body {
     margin-top: 1rem;
 }
 .btn-primary{
+    /* https://codepen.io/3mil1/pen/eYYQbwb */
     position: relative;
     top: 0;
-    cursor: pointer;
     text-decoration: none !important;
     outline: none !important;
     font-family: 'Carter One', sans-serif;
@@ -58,9 +58,9 @@ body {
     text-shadow: 2px 2px 1px #348628, -2px 2px 1px #348628, 2px -2px 1px #348628, -2px -2px 1px #348628, 0px 2px 1px #348628, 0px -2px 1px #348628, 0px 4px 1px #1d4c16, 2px 4px 1px #1d4c16, -2px 4px 1px #1d4c16;
 }
 .btn-secound{
+    /* https://codepen.io/3mil1/pen/eYYQbwb */
     position: relative;
     top: 0;
-    cursor: pointer;
     text-decoration: none !important;
     outline: none !important;
     font-family: 'Carter One', sans-serif;
@@ -129,6 +129,8 @@ h1 {
 
 /* Buttons */
 .btn-reset {
+    /* https://codepen.io/3mil1/pen/eYYQbwb */
+
     position: relative;
     top: 0;
     cursor: pointer;
@@ -150,10 +152,14 @@ h1 {
     box-shadow: 0 6px 0 #266b91, 0 8px 1px 1px rgba(0,0,0,.3), 0 10px 0 5px #12517d, 0 12px 0 5px #1a6b9a, 0 15px 0 5px #0c405e, 0 15px 1px 6px rgba(0,0,0,.3);
 }
 .btn-reset:hover{
+        /* https://codepen.io/3mil1/pen/eYYQbwb */
+
     top:2px;
   box-shadow: 0 4px 0 #266b91, 0 6px 1px 1px rgba(0,0,0,.3), 0 8px 0 5px #12517d, 0 10px 0 5px #1a6b9a, 0 13px 0 5px #0c405e, 0 13px 1px 6px rgba(0,0,0,.3);
 }
 .btn-keyboard{
+        /* https://codepen.io/3mil1/pen/eYYQbwb */
+
     position: relative;
     top: 0;
     cursor: pointer;
@@ -178,12 +184,11 @@ h1 {
 
 .correct-guess {
     color: #6ad540;
-    cursor: not-allowed; 
 }
 
 .wrong-guess {
     color: #ff5454;
-    cursor: not-allowed; 
+     
 }
 
 .btn-reset::before,
@@ -191,6 +196,8 @@ h1 {
 .btn-secound::before,
 #plus-textSize::before,
 #minus-textSize::before{
+        /* https://codepen.io/3mil1/pen/eYYQbwb */
+
     content: '';
     height: 10%;
     position: absolute;
@@ -205,6 +212,8 @@ h1 {
 .btn-secound::after,
 #plus-textSize::after,
 #minus-textSize::after {
+        /* https://codepen.io/3mil1/pen/eYYQbwb */
+
     content: '';
     height: 10%;
     position: absolute;
@@ -217,6 +226,8 @@ h1 {
 }
 /* Plus-Minus WCAG */
 .plus-minusWCAG {
+        /* https://codepen.io/3mil1/pen/eYYQbwb */
+
     position: fixed;
     top: 18%;
     left: 85%;
@@ -231,6 +242,8 @@ h1 {
 }
 
 #plus-textSize, #minus-textSize {
+        /* https://codepen.io/3mil1/pen/eYYQbwb */
+
     position: relative;
     top: 0;
     cursor: pointer;
@@ -286,9 +299,10 @@ h1 {
 }
 
 .wrong-guess {
+        /* https://codepen.io/3mil1/pen/eYYQbwb */
+
     position: relative;
     top: 0;
-    cursor: pointer;
     text-decoration: none !important;
     outline: none !important;
     font-family: 'Carter One', sans-serif;
@@ -312,9 +326,10 @@ h1 {
 }
 
 .correct-guess {
+        /* https://codepen.io/3mil1/pen/eYYQbwb */
+
     position: relative;
     top: 0;
-    cursor: pointer;
     text-decoration: none !important;
     outline: none !important;
     font-family: 'Carter One', sans-serif;
